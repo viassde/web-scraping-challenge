@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Weather</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <h2>Latest Mars news</h2>
+        <h3>{{ planet.news_tt }}</h3>
+        <h4>{{ planet.news_par }}</h4>
+
+      </div>
+      <div class="row">
+
+        <div class="col-md-12">
+          <h2>JPL Featured Space Image</h2>
+          <img src="{{ planet.fimg_url }}" alt="Mars">
+
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <h2>Current weather on Mars</h2>
+          <h3>{{ planet.weather_describe }}</h3>
+        </div>
+
+        <div class="col-md-6">
+          <h2>Mars Facts - Table</h2>
+          <h3>{{planet.facts_table|safe}}</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <h2>Mars Hemispheres</h2>
+
+  <h3> Valles Marineris Hemisphere Enhanced</h3>
+  <img src="{{ planet.valles_url }}" alt="Valles">
+
+  <h3> Cerberus Hemisphere Enhanced</h3>
+  <img src="{{ planet.cerber_url }}" alt="Cerberus">
+
+  <h3> Schiaparelli Hemisphere Enhanced</h3>
+  <img src="{{ planet.schiapa_url }}" alt="Schiapa">
+
+  <h3> Syrtis Major Hemisphere Enhanced</h3>
+  <img src="{{ planet.syrtis_url }}" alt="Syrtis">
+
+  </div>
+
+  </div>
+  </div>
+</body>
+
+</html>
